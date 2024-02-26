@@ -10,7 +10,7 @@
 
 
 
-<meta name="date" content="2024-01-23" />
+<meta name="date" content="2024-02-25" />
 
 <title>Introduction to Statistics in Python</title>
 
@@ -350,7 +350,7 @@ display: none;
 
 
 <h1 class="title toc-ignore">Introduction to Statistics in Python</h1>
-<h4 class="date">2024-01-23</h4>
+<h4 class="date">2024-02-25</h4>
 
 </div>
 
@@ -403,8 +403,8 @@ print(food_consumption.groupby(&#39;food_category&#39;)[&#39;co2_emission&#39;].
 ## soybeans           0.879882    0.938020
 ## wheat             71.023937    8.427570
 ## 
-## &lt;string&gt;:2: FutureWarning: The provided callable &lt;function var at 0x1067b0ee0&gt; is currently using SeriesGroupBy.var. In a future version of pandas, the provided callable will be used directly. To keep current behavior pass the string &quot;var&quot; instead.
-## &lt;string&gt;:2: FutureWarning: The provided callable &lt;function std at 0x1067b0dc0&gt; is currently using SeriesGroupBy.std. In a future version of pandas, the provided callable will be used directly. To keep current behavior pass the string &quot;std&quot; instead.</code></pre>
+## &lt;string&gt;:2: FutureWarning: The provided callable &lt;function var at 0x10c410e50&gt; is currently using SeriesGroupBy.var. In a future version of pandas, the provided callable will be used directly. To keep current behavior pass the string &quot;var&quot; instead.
+## &lt;string&gt;:2: FutureWarning: The provided callable &lt;function std at 0x10c410d30&gt; is currently using SeriesGroupBy.std. In a future version of pandas, the provided callable will be used directly. To keep current behavior pass the string &quot;std&quot; instead.</code></pre>
 <pre class="python"><code># Create histogram of co2_emission for food_category &#39;beef&#39;
 food_consumption[food_consumption[&#39;food_category&#39;] == &#39;beef&#39;][&#39;co2_emission&#39;].hist()
 # Show plot

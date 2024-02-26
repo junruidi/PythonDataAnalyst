@@ -1,7 +1,7 @@
 ---
 title: "Introduction to Statistics in Python"
 output: html_document
-date: "2024-01-23"
+date: "`r Sys.Date()`"
 ---
 
 ```{python}
