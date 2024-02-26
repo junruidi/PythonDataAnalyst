@@ -1,0 +1,86 @@
+---
+title: "Introduction to Statistics in Python"
+output: html_document
+date: "2024-01-23"
+---
+
+```{python}
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+```
+
+
+## 1. Mean and median
+```{python}
+food_consumption = pd.read_csv("data/food_consumption.csv")
+```
+
+
+```{python}
+# Filter for Belgium
+be_consumption = food_consumption[food_consumption['country'] == 'Belgium']
+# Calculate mean and median consumption in Belgium
+print(np.mean(be_consumption['consumption']))
+print(np.median(be_consumption['consumption']))
+
+# Subset for food_category equals rice
+rice_consumption = food_consumption[food_consumption['food_category'] == 'rice']
+
+# Histogram of co2_emission for rice and show plot
+rice_consumption['co2_emission'].hist()
+plt.show()
+```
+
+
+
+## 2. Spread
+
+**Quantiles**
+```{python}
+# Calculate the quartiles of co2_emission
+print(np.quantile(food_consumption['co2_emission'], [0,0.25,0.5,0.75,1]))
+
+# Calculate the deciles of co2_emission
+print(np.quantile(food_consumption['co2_emission'], np.linspace(0, 1, 11)))
+```
+
+
+**Variance and Standard Deviation**
+```{python}
+# Print variance and sd of co2_emission for each food_category
+print(food_consumption.groupby('food_category')['co2_emission'].agg([np.var, np.std]))
+
+# Create histogram of co2_emission for food_category 'beef'
+food_consumption[food_consumption['food_category'] == 'beef']['co2_emission'].hist()
+# Show plot
+plt.show()
+
+# Create histogram of co2_emission for food_category 'eggs'
+food_consumption[food_consumption['food_category'] == 'eggs']['co2_emission'].hist()
+# Show plot
+plt.show()
+```
+
+
+**IQR, Range, and Outliers**
+```{python}
+# Calculate total co2_emission per country: emissions_by_country
+emissions_by_country =  food_consumption.groupby('country')['co2_emission'].sum()
+
+# Calculate total co2_emission per country: emissions_by_country
+emissions_by_country = food_consumption.groupby('country')['co2_emission'].sum()
+
+# Compute the first and third quartiles and IQR of emissions_by_country
+q1 = np.quantile(emissions_by_country, 0.25)
+q3 = np.quantile(emissions_by_country, 0.75)
+iqr = q3 - q1
+
+# Calculate the lower and upper cutoffs for outliers
+lower = q1 - 1.5 * iqr
+upper = q3 + 1.5 * iqr
+
+# Subset emissions_by_country to find outliers
+outliers = emissions_by_country[(emissions_by_country < lower) | (emissions_by_country > upper)]
+print(outliers)
+```

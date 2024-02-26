@@ -1,0 +1,11 @@
+---
+title: "Data Manipulation with Pandas"
+author: "Junrui Di"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{python}
+import pandas as pd
+import numpy as np
+```
