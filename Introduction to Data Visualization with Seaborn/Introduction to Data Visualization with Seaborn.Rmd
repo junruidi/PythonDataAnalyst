@@ -5,3 +5,88 @@ date: "`r Sys.Date()`"
 output: html_document
 ---
 
+```{python}
+import seaborn as sns
+import matplotlib.pyplot as plt
+import pandas as pd
+```
+
+## 1. Seabonr with pandas data frame
+
+```{python}
+# Create a DataFrame from csv file
+df = pd.read_csv("data/young-people-survey-responses.csv")
+
+# Create a count plot with "Spiders" on the x-axis
+sns.countplot(x = "Spiders", data = df)
+
+# Display the plot
+plt.show()
+```
+
+## 2. Hue
+```{python, eval = F}
+# Import Matplotlib and Seaborn
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+# Create a dictionary mapping subgroup values to colors
+palette_colors = {"Rural": "green", "Urban": "blue"}
+
+# Create a count plot of school with location subgroups
+sns.countplot(x = "school", data = student_data, hue = "location",palette=palette_colors)
+
+# Display plot
+plt.show()
+```
+
+## 3. Relationship plot `relplot` and customization
+
+### Subplots
+```{python, eval = F}
+# Adjust further to add subplots based on family support
+sns.relplot(x="G1", y="G3", 
+            data=student_data,
+            kind="scatter", 
+            col="schoolsup",
+            col_order=["yes", "no"],
+            row = "famsup",
+            row_order = ["yes","no"])
+
+# Show plot
+```
+
+### Points customization
+```{python}
+mpg = pd.read_csv("data/mpg.csv")
+# Create scatter plot of horsepower vs. mpg
+sns.relplot(x="horsepower", y="mpg", 
+            data=mpg, kind="scatter", 
+            size="cylinders",
+            hue = 
+            "cylinders")
+# Show plot
+plt.show()
+
+# Create a scatter plot of acceleration vs. mpg
+sns.relplot(x = "acceleration", y = "mpg", data = mpg, kind = "scatter", hue = "origin", style = "origin")
+# Show plot
+plt.show()
+```
+
+### Line plot
+```{python}
+# Add markers and make each line have the same style
+sns.relplot(x="model_year", y="horsepower", 
+            data=mpg, kind="line", 
+            markers = True,
+            ci=None, style="origin", 
+            hue="origin",
+            dashes = False)
+
+# Show plot
+plt.show()
+```
+
+
+
