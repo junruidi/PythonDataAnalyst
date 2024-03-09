@@ -89,4 +89,17 @@ plt.show()
 ```
 
 
+## 4. Categorical plot `catplot`
+
+```{python}
+survey_data = pd.read_csv("data/young-people-survey-responses.csv")
+
+# Separate into column subplots based on age category
+sns.catplot(x="Internet usage", data=survey_data,
+            kind="count")
+# Show plot
+plt.show()
+
+```
+
 
