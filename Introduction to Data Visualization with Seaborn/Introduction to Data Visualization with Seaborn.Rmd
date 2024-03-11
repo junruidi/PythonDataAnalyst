@@ -102,4 +102,40 @@ plt.show()
 
 ```
 
+## 5. Customization 
+
+```{python}
+# Change the color palette to "RdBu"
+sns.set_style("whitegrid")
+sns.set_palette("RdBu")
+
+
+
+g = sns.catplot(x="Internet usage", 
+            data=survey_data, 
+            kind="count")
+g.fig.suptitle("Figure 1")
+g.set(xlabel = "X Label")
+
+# Show plot
+plt.show()
+```
+
+## 6. Put Everything Together
+
+```{python}
+# Set palette to "Blues"
+sns.set_palette("Blues")
+
+# Adjust to add subgroups based on "Interested in Pets"
+f= sns.catplot(x="Gender",
+                y="Age", data=survey_data, 
+                kind="box", hue="Internet usage")
+
+# Set title to "Age of Those Interested in Pets vs. Not"
+f.fig.suptitle("Age of Those Interested in Pets vs. Not")
+
+# Show plot
+plt.show()
+```
 
