@@ -5,7 +5,7 @@ This is my learning note from the Python Data Analyst DataCamp Career Path.
 ### **Learning Module**
 
 | Course                                          | Link                                                                                                                                                                                                          |
-|----------------------------|--------------------------------------------|
+|-------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Introduction to Python                          |                                                                                                                                                                                                               |
 | Intermediate Python                             | [Link](https://htmlpreview.github.io/?https://github.com/junruidi/PythonDataAnalyst/blob/main/Intermediate%20Python/Intermediate-Python.html)                                                                 |
 | Data Manipulation with Pandas                   | [Link](https://htmlpreview.github.io/?https://github.com/junruidi/PythonDataAnalyst/blob/main/Data%20Manipulations%20with%20Pandas/Data-Manipulation-in-Pandas.html)                                          |
