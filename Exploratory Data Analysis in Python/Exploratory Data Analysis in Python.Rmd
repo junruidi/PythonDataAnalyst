@@ -136,12 +136,14 @@ sns.countplot(data=planes, x="Duration_Category")
 plt.show()
 ```
 
-## 5. Numeric value
+## 5. Caterorical Variable
 
 ```{python}
-# Preview the column
-print(planes["Duration"].head())
+salaries = pd.read_csv("data/ds_salaries_clean.csv")
+salaries.head()
 
+print(pd.crosstab(salaries["Designation"], salaries["Experience"],
+            values=salaries["Salary_USD"], aggfunc="mean"))
 ```
 
 
